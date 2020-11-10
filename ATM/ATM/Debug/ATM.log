@@ -1,0 +1,7 @@
+﻿  LinkedList.cpp
+D:\C++\CTDL\ATM\ATM\LinkedList.h(12,6): error C2059: syntax error: ':'
+D:\C++\CTDL\ATM\ATM\LinkedList.h(16): message : see reference to class template instantiation 'LinkedList<Datatype>' being compiled
+D:\C++\CTDL\ATM\ATM\LinkedList.h(12,1): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+D:\C++\CTDL\ATM\ATM\LinkedList.h(16,1): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  Node.cpp
+  Generating Code...
