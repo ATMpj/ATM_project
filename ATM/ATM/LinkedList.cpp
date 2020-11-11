@@ -110,16 +110,98 @@ Node <Datatype>* LinkedList <Datatype>::searchPre(Datatype data)
 }
 
 
+/************************************************************************
+* @Description Xoa phan tu dau trong LinkedList
+*************************************************************************/
 template <class Datatype>
-void removeHead();
+void LinkedList <Datatype>::removeHead()
+{
+	if (_pHead != NULL)
+	{
+		Node <Datatype>* pTemp = _pHead;
+		_pHead = _pHead->_pNext;
+		delete pTemp;
+		if (_pHead == NULL)
+			_pTail == NULL;
+		_iSize--;
+	}
+}
+/************************************************************************
+* @Description Xoa phan tu cuoi trong LinkedList
+*************************************************************************/
 template <class Datatype>
-void removeTail();
+void LinkedList <Datatype>::removeTail()
+{
+	if (_pHead == NULL)
+		return;
+	Node <Datatype>* pTemp = _pTail;
+	_pTail = searchPre(_pTail);
+	delete pTemp;
+	if (_pTail != NULL)
+		_pTail->_pNext = NULL;
+	else
+		_pHead = NULL;
+	_iSize--;
+}
+/************************************************************************
+* @Description Xoa phan tu sau mot phan tu khac trong LinkedList
+*************************************************************************/
 template <class Datatype>
-void removeAfter(Node <Datatype>* data);
+void LinkedList <Datatype>::removeAfter(Node <Datatype>* node)
+{
+	Node <Datatype>* pTemp;
+	if (node != NULL)
+	{
+		pTemp = node->_pNext;
+		if (pTemp != NULL)
+		{
+			if (pTemp == pTail)
+				_pTail = node;
+			node->_pNext = pTemp->_pNext;
+			delete pTemp;
+		}
+	}
+	else
+	{
+		removeHead();
+	}
+	_iSize--;
+}
+/************************************************************************
+* @Description Xoa phan tu co khoa data trong LinkedList
+*************************************************************************/
 template <class Datatype>
-void remove(Datatype data);
+void LinkedList <Datatype>::remove(Datatype data)
+{
+	Node <Datatype>* pWalker = _pHead, * pTemp = NULL;
+	while ((pWalker != NULL) && (pWalker->_data != data))
+	{
+		pTemp = pWalker;
+		pWalker = pWalker->_pNext;
+	}
+	
+	if (pWalker == NULL) return;
+	if (pTemp != NULL)
+	{
+		if (pWalker == _pTail)
+		{
+			_pTail = pTemp;
+			_pTail->_pNext = NULL;
+		}
+		pTemp->_pNext = pWalker->_pNext;
+		delete pWalker;
+		_iSize--;
+	}
+}
+/************************************************************************
+* @Description Xoa toan bo LinkedList
+*************************************************************************/
 template <class Datatype>
-void clear();
+void LinkedList <Datatype>::clear()
+{
+	while (_pHead != NULL)
+		removeHead();
+}
 
 
 /*******************************************************

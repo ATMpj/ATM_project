@@ -21,7 +21,7 @@ public:
 
 	void removeHead();
 	void removeTail();
-	void removeAfter(Node <Datatype>* data);
+	void removeAfter(Node <Datatype>* node);
 	void remove(Datatype data);
 	void clear();
 

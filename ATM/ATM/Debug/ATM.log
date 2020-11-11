@@ -1,7 +1,8 @@
 ﻿  LinkedList.cpp
-D:\C++\CTDL\ATM\ATM\LinkedList.h(12,6): error C2059: syntax error: ':'
-D:\C++\CTDL\ATM\ATM\LinkedList.h(16): message : see reference to class template instantiation 'LinkedList<Datatype>' being compiled
-D:\C++\CTDL\ATM\ATM\LinkedList.h(12,1): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
-D:\C++\CTDL\ATM\ATM\LinkedList.h(16,1): fatal error C1903: unable to recover from previous error(s); stopping compilation
+D:\C++\ATM_project\ATM\ATM\LinkedList.cpp(66,6): error C2955: 'Node': use of class template requires template argument list
+D:\C++\ATM_project\ATM\ATM\Node.h(7): message : see declaration of 'Node'
+D:\C++\ATM_project\ATM\ATM\LinkedList.cpp(103,11): error C3861: 'node': identifier not found
+D:\C++\ATM_project\ATM\ATM\LinkedList.cpp(158,17): error C3861: 'pTail': identifier not found
   Node.cpp
+  User.cpp
   Generating Code...
