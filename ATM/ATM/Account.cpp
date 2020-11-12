@@ -1,4 +1,5 @@
-﻿#include "Account.h"
+﻿#pragma warning(disable : 4996)
+#include "Account.h"
 
 using namespace std;
 
@@ -35,14 +36,14 @@ long long Account::get_lSurplus() { return _lSurplus; }
 string Account::get_strTypeCurrency() { return _strTypeCurrency; }
 bool Account::get_bStatus() { return _bStatus; }
 
-Account::Account(string id = "", string pin = "", string accName = "", long long surplus = 0, string type = "VND", bool status = true)
+Account::Account()
 {
-	this->_strID = id;
-	this->_strPIN = pin;
-	this->_strAccountName = accName;
-	this->_lSurplus = surplus;
-	this->_strTypeCurrency = type;
-	this->_bStatus = status;
+	this->_strID = "";
+	this->_strPIN = "";
+	this->_strAccountName = "";
+	this->_lSurplus = 0;
+	this->_strTypeCurrency = "VND";
+	this->_bStatus = true;
 }
 Account::Account(const Account& u)
 {
@@ -58,9 +59,9 @@ Account::~Account() {}
 void Account::loginAccount()
 {
 	char c;
-	cout << "\t\tID:";
+	cout << "ID:";
 	cin >> _strID;
-	cout << "\t\tPIN:";
+	cout << "PIN:";
 	c = _getch();
 	while (c != 13)
 	{
@@ -203,6 +204,9 @@ void Account::historyDeal() {
 		cout << endl;
 	}
 }
+void Account::transfers() {
+	cout << "Nhap ID nguoi nhan: " << endl;
+}
 void Account::withDrawal() {
 	long long  tienRut;
 	long long tienConLai;
@@ -307,7 +311,7 @@ void Account::run()
 			cout << "*************MENU************" << endl;
 			cout << "   1.Xem thong tin tai khoan " << endl;
 			cout << "   2.Rut tien " << endl;
-			//cout << "   3.Chuyen tien " << endl;
+			cout << "   3.Chuyen tien " << endl;
 			cout << "   4.Xem noi dung giao dich" << endl;
 			cout << "   5.Doi ma pin" << endl;
 			cout << "   6.Thoat" << endl;
@@ -326,6 +330,8 @@ void Account::run()
 				withDrawal();
 				cout << "Rut tien thanh cong!!!\n";
 				break;
+			case 3:
+				system("cls");
 
 			case 4:
 				system("cls");
@@ -357,4 +363,124 @@ void Account::run()
 void Admin::unBlockUser() {
 	_vctID[4] = "1";
 	writeID();
+}
+
+
+
+
+
+void Login::setChoose() {
+	cin >> _iChoose;
+}
+int Login::getChoose() {
+	return _iChoose;
+}
+void Login::optionChoose(){
+	cout << endl << endl;
+		cout << "	Chon Loai Tai Khoan Dang Nhap:	" << endl;
+		cout << "	1.Dang Nhap Tai Khoan Admin" << endl;
+		cout << "	2.Dang Nhap Tai Khoan User" << endl << endl << endl;
+		cout << "	Nhap Lua Chon Cua Ban: ";
+		setChoose();
+}
+void Login::menuAdmin(){
+	system("cls");
+	cout << "* * * * * * * * * * MENU * * * * * * * * * *" << endl << endl;
+	cout << "\t1. Xem danh sach tai khoan" << endl;
+	cout << "\t2. Them tai khoan" << endl;
+	cout << "\t3. Xoa tai khoan" << endl;
+	cout << "\t4. Mo khoa tai khoan" << endl;
+	cout << "\t5. Thoat" << endl << endl;
+	cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
+}
+void Login::menuUser()
+{
+	system("cls");
+	cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
+	cout << "\t1. Xem thong tin tai khoan" << endl;
+	cout << "\t2. Rut tien" << endl;
+	cout << "\t3. Chuyen tien" << endl;
+	cout << "\t4. Xem noi dung giao dich" << endl;
+	cout << "\t5. Doi ma PIN" << endl;
+	cout << "\t6. Thoat" << endl << endl;
+	cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
+}
+void Login::userLogin() {
+	Account user;
+	int dem = 0;
+	string choice = "";
+	int num;
+	cout << "********************" << endl;
+	cout << "*  DANG NHAP USER  *" << endl;
+	cout << "********************" << endl;
+	user.loginAccount();
+	while (!user.isLogin()) {
+		if (dem < 2) {
+			system("cls");
+			cout << "********************" << endl;
+			cout << "*  DANG NHAP USER  *" << endl;
+			cout << "********************" << endl;
+			cout << "Sai ma PIN vui long nhap lai: " << endl;
+			dem++;
+			user.loginWhenPINWrong();
+		}
+		else {
+			user.blockUser();
+			return;
+		}
+	}
+	if (user.isLogin() && !user.isBlock()) {
+
+		do {
+			system("cls");
+			cout << "*************MENU************" << endl;
+			cout << "   1.Xem thong tin tai khoan " << endl;
+			cout << "   2.Rut tien " << endl;
+			cout << "   3.Chuyen tien " << endl;
+			cout << "   4.Xem noi dung giao dich" << endl;
+			cout << "   5.Doi ma pin" << endl;
+			cout << "   6.Thoat" << endl;
+			cout << "******************************" << endl;
+			cout << "Vui long chon chuc nang: ";
+			cin >> num;
+
+			switch (num) {
+			case 1:
+				system("cls");
+				user.showInfomation();
+				break;
+
+			case 2:
+				system("cls");
+				user.withDrawal();
+				cout << "Rut tien thanh cong!!!\n";
+				break;
+			case 3:
+				system("cls");
+
+			case 4:
+				system("cls");
+				user.historyDeal();
+				break;
+
+			case 5:
+				system("cls");
+				user.changePIN();
+				break;
+
+			case 6:
+				return;
+				break;
+			}
+			if (num != 6) {
+				cout << endl << "Thuc hien chuc nang khac vui long nhap T hoac t:" << endl;
+				cin >> choice;
+			}
+
+		} while (choice.compare("t") == 0 || choice.compare("T") == 0);
+	}
+	else if (user.isBlock()) {
+		system("cls");
+		cout << "Tai khoan da bi khoa do dang nhap sai qua 3 lan";
+	}
 }

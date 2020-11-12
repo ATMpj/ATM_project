@@ -1,24 +1,11 @@
-﻿  LinkedList.cpp
-D:\ATM_project\ATM\ATM\LinkedList.cpp(103,11): error C3861: 'node': identifier not found
-D:\ATM_project\ATM\ATM\LinkedList.cpp(158,17): error C3861: 'pTail': identifier not found
+﻿  Account.cpp
+D:\ATM_project\ATM\ATM\Account.cpp(102,20): warning C4018: '<': signed/unsigned mismatch
+D:\ATM_project\ATM\ATM\Account.cpp(104,9): warning C4018: '<': signed/unsigned mismatch
+D:\ATM_project\ATM\ATM\Account.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
+D:\ATM_project\ATM\ATM\Account.cpp(126,9): warning C4018: '<': signed/unsigned mismatch
+D:\ATM_project\ATM\ATM\Account.cpp(158,20): warning C4018: '<': signed/unsigned mismatch
+D:\ATM_project\ATM\ATM\Account.cpp(199,20): warning C4018: '<': signed/unsigned mismatch
+D:\ATM_project\ATM\ATM\Account.cpp(244,20): warning C4018: '<': signed/unsigned mismatch
   main.cpp
-D:\ATM_project\ATM\ATM\main.cpp(8,10): error C2512: 'Account': no appropriate default constructor available
-D:\ATM_project\ATM\ATM\Account.h(14,7): message : see declaration of 'Account'
-  Account.cpp
-D:\ATM_project\ATM\ATM\Account.cpp(39,1): error C2511: 'Account::Account(void)': overloaded member function not found in 'Account'
-D:\ATM_project\ATM\ATM\Account.h(14): message : see declaration of 'Account'
-D:\ATM_project\ATM\ATM\Account.cpp(40,2): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
-D:\ATM_project\ATM\ATM\Account.cpp(41,2): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
-D:\ATM_project\ATM\ATM\Account.cpp(42,2): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
-D:\ATM_project\ATM\ATM\Account.cpp(43,2): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
-D:\ATM_project\ATM\ATM\Account.cpp(44,2): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
-D:\ATM_project\ATM\ATM\Account.cpp(45,2): error C2671: 'Account::{ctor}': static member functions do not have 'this' pointers
-D:\ATM_project\ATM\ATM\Account.cpp(101,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM\ATM\Account.cpp(103,9): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM\ATM\Account.cpp(123,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM\ATM\Account.cpp(125,9): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM\ATM\Account.cpp(144,12): error C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\ATM_project\ATM\ATM\Account.cpp(157,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM\ATM\Account.cpp(198,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM\ATM\Account.cpp(240,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
+  ATM.vcxproj -> D:\ATM_project\ATM\Debug\ATM.exe

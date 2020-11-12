@@ -5,8 +5,7 @@
 using namespace std;
 int main()
 {
-	Account a;
-	a.run();
+	LinkedList <int> a;
 
-	system("pause");
+	return 0;
 }

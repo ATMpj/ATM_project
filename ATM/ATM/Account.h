@@ -19,6 +19,10 @@ class Account
 	long long _lSurplus;
 	string _strTypeCurrency;
 	bool _bStatus;
+
+	string pathCardDefault = "ATM_data\\TheTu.txt";
+	string pathIDDefault = "ATM_data\\ID\\";
+	string pathHistoryDefault = "ATM_data\\LichSuGD\\LichSu";
 public:
 	void set_strID(string);
 	void set_strPIN(string);
@@ -34,7 +38,7 @@ public:
 	string get_strTypeCurrency();
 	bool get_bStatus();
 
-	Account(string, string, string, long long, string, bool);
+	Account();
 	Account(const Account&);
 	~Account();
 
@@ -42,9 +46,6 @@ public:
 	vector<string> _vctCard;
 	vector<string> _vctHistory;
 
-	string pathCardDefault = "ATM_data\\TheTu.txt";
-	string pathIDDefault = "ATM_data\\ID\\";
-	string pathHistoryDefault = "ATM_data\\LichSuGD\\LichSu";
 
 	void loginAccount();
 	void loginWhenPINWrong();
@@ -55,6 +56,7 @@ public:
 	void writeCard();
 	void readHistory();
 	void writeHistory(long long);
+	void transfers();
 
 	bool isLogin();
 	bool isBlock();
@@ -71,7 +73,22 @@ public:
 
 class Admin : public Account
 {
+
 public:
 	void unBlockUser();
 	void removeAccout();
+};
+
+class Login
+{
+	int _iChoose;
+public:
+	void setChoose();
+	int getChoose();
+
+	void optionChoose();
+	void menuAdmin();
+	void menuUser();
+
+	void userLogin();
 };
