@@ -1,0 +1,28 @@
+test1
+rut tien
+10000
+12/2/2020
+test1
+Rut Tien
+100000
+Thu Oct 22 09:01:02 2020
+test1
+Rut Tien
+10000
+Thu Oct 22 09:01:37 2020
+test1
+CHUYEN TIEN CHO: nguyen van c Voi Id chuyen den: test3
+100000
+Thu Oct 22 09:02:48 2020
+test1
+Rut Tien
+90000
+Wed Nov 11 23:07:26 2020
+test2
+rut tien
+50000
+12/2/2020
+test1
+CHUYEN TIEN CHO: nguyen van b Voi Id chuyen den: test2
+100000
+Wed Nov 11 23:09:01 2020

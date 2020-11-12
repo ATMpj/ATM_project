@@ -13,16 +13,16 @@ public:
 	LinkedList();
 	~LinkedList();
 
-	void addHead(Datatype data);
-	void addTail(Datatype data);
-	void addAfter(Node <Datatype>* node, Datatype data);
-	Node <Datatype>* search(Datatype data);
-	Node <Datatype>* searchPre(Datatype node);
+	void addHead(Datatype);
+	void addTail(Datatype);
+	void addAfter(Node <Datatype>*, Datatype);
+	Node <Datatype>* search(Datatype);
+	Node <Datatype>* searchPre(Datatype);
 
 	void removeHead();
 	void removeTail();
-	void removeAfter(Node <Datatype>* node);
-	void remove(Datatype data);
+	void removeAfter(Node <Datatype>*);
+	void remove(Datatype);
 	void clear();
 
 	void display();

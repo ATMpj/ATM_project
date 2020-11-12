@@ -6,6 +6,10 @@ D:\ATM_project\ATM\ATM\Account.cpp(126,9): warning C4018: '<': signed/unsigned m
 D:\ATM_project\ATM\ATM\Account.cpp(158,20): warning C4018: '<': signed/unsigned mismatch
 D:\ATM_project\ATM\ATM\Account.cpp(199,20): warning C4018: '<': signed/unsigned mismatch
 D:\ATM_project\ATM\ATM\Account.cpp(244,20): warning C4018: '<': signed/unsigned mismatch
+  LinkedList.cpp
   main.cpp
   Generating Code...
-  ATM.vcxproj -> D:\ATM_project\ATM\Debug\ATM.exe
+main.obj : error LNK2019: unresolved external symbol "public: __thiscall LinkedList<int>::LinkedList<int>(void)" (??0?$LinkedList@H@@QAE@XZ) referenced in function _main
+main.obj : error LNK2019: unresolved external symbol "public: __thiscall LinkedList<int>::~LinkedList<int>(void)" (??1?$LinkedList@H@@QAE@XZ) referenced in function _main
+main.obj : error LNK2019: unresolved external symbol "public: void __thiscall LinkedList<int>::display(void)" (?display@?$LinkedList@H@@QAEXXZ) referenced in function _main
+D:\ATM_project\ATM\Debug\ATM.exe : fatal error LNK1120: 3 unresolved externals

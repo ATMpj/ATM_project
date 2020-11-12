@@ -205,7 +205,10 @@ void Account::historyDeal() {
 	}
 }
 void Account::transfers() {
+	string nguoiNhanID;
 	cout << "Nhap ID nguoi nhan: " << endl;
+	cin >> nguoiNhanID;
+
 }
 void Account::withDrawal() {
 	long long  tienRut;
@@ -280,7 +283,7 @@ void Account::changePIN() {
 
 	}
 }
-void Account::run()
+/*void Account::run()
 {
 	int dem = 0;
 	string choice = "";
@@ -358,7 +361,7 @@ void Account::run()
 		system("cls");
 		cout << "Tai khoan da bi khoa do dang nhap sai qua 3 lan";
 	}
-}
+}*/
 
 void Admin::unBlockUser() {
 	_vctID[4] = "1";
