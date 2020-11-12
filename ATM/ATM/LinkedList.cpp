@@ -63,7 +63,7 @@ template <class Datatype>
 void LinkedList <Datatype>::addAfter(Node <Datatype>* node, Datatype data)
 {
 	Node <Datatype>* pAdd = new Node <Datatype>(data);
-	if (Node != NULL)
+	if (node != NULL)
 	{
 		pAdd->_pNext = node->_pNext;
 		node->_pNext = pAdd;
@@ -97,7 +97,7 @@ Node <Datatype>* LinkedList <Datatype>:: search(Datatype data)
 * @return Tra ve phan tu tim thay, NULL neu khong tim duoc
 *************************************************************************/
 template <class Datatype>
-Node <Datatype>* LinkedList <Datatype>::searchPre(Datatype data)
+Node <Datatype>* LinkedList <Datatype>::searchPre(Datatype node)
 {
 	Node <Datatype>* p = _pHead;
 	if (p == node)
@@ -155,7 +155,7 @@ void LinkedList <Datatype>::removeAfter(Node <Datatype>* node)
 		pTemp = node->_pNext;
 		if (pTemp != NULL)
 		{
-			if (pTemp == pTail)
+			if (pTemp == _pTail)
 				_pTail = node;
 			node->_pNext = pTemp->_pNext;
 			delete pTemp;

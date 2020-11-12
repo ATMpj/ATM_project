@@ -17,7 +17,7 @@ public:
 	void addTail(Datatype data);
 	void addAfter(Node <Datatype>* node, Datatype data);
 	Node <Datatype>* search(Datatype data);
-	Node <Datatype>* searchPre(Datatype data);
+	Node <Datatype>* searchPre(Datatype node);
 
 	void removeHead();
 	void removeTail();

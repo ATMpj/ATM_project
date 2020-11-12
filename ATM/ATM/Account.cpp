@@ -35,23 +35,23 @@ long long Account::get_lSurplus() { return _lSurplus; }
 string Account::get_strTypeCurrency() { return _strTypeCurrency; }
 bool Account::get_bStatus() { return _bStatus; }
 
-Account::Account(string id = "", string pin = "", string accname = "", long long surplus = 0, string type = "VND", bool status = true)
+Account::Account(string id = "", string pin = "", string accName = "", long long surplus = 0, string type = "VND", bool status = true)
 {
-	_strID = id;
-	_strPIN = pin;
-	_strAccountName = accname;
-	_lSurplus = surplus;
-	_strTypeCurrency = type;
-	_bStatus = status;
+	this->_strID = id;
+	this->_strPIN = pin;
+	this->_strAccountName = accName;
+	this->_lSurplus = surplus;
+	this->_strTypeCurrency = type;
+	this->_bStatus = status;
 }
 Account::Account(const Account& u)
 {
-	_strID = u._strID;
-	_strPIN = u._strPIN;
-	_strAccountName = u._strAccountName;
-	_lSurplus = u._lSurplus;
-	_strTypeCurrency = u._strTypeCurrency;
-	_bStatus = u._bStatus;
+	this->_strID = u._strID;
+	this->_strPIN = u._strPIN;
+	this->_strAccountName = u._strAccountName;
+	this->_lSurplus = u._lSurplus;
+	this->_strTypeCurrency = u._strTypeCurrency;
+	this->_bStatus = u._bStatus;
 }
 Account::~Account() {}
 
