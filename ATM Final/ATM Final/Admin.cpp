@@ -51,21 +51,20 @@ vector<Admin> ListAdmin::getListAdmin() {
 FeatureAdmin::FeatureAdmin() {
 	system("cls");
 
-	cout << endl << endl;
-	cout << "* * * * * * * * * * * * * * * * * * * * * * *" << endl;
-	cout << "*             DANG NHAP ADMIN               *" << endl;
-	cout << "* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+	cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+	cout << "\t\t\t*             DANG NHAP ADMIN               *" << endl;
+	cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
 	cout << endl;
 
 	_arrAdmin.readFile();
 }
 
 void FeatureAdmin::input() {
-	cout << "	User: ";
+	cout << "\t\t\t\tUser: ";
 	cin >> _strUser;
 	_admin.setUser(_strUser);
 
-	cout << "	PIN: ";
+	cout << "\t\t\t\tPIN: ";
 	cin >> _strPin;
 	_admin.setPass(_strPin);
 }
@@ -74,7 +73,7 @@ bool FeatureAdmin::checkLogin() {
 }
 
 void FeatureAdmin::chooseOne() {
-	cout << "	Danh Sach Tai Khoan" << endl;
+	cout << "\t\t\t\tDanh Sach Tai Khoan" << endl;
 
 	ListUser arrUser;
 	arrUser.readFile();
@@ -84,7 +83,7 @@ void FeatureAdmin::chooseTwo() {
 	ListUser arrUSer;
 	arrUSer.readFile();
 
-	cout << "	Nhap ID Muon Them: ";
+	cout << "\t\t\t\tNhap ID Muon Them: ";
 
 	string newID;
 	cin >> newID;
@@ -93,44 +92,44 @@ void FeatureAdmin::chooseTwo() {
 
 		User newUser;
 		newUser.setID(newID);
-		newUser.setPIN("123456");
+		newUser.setPIN("1111");
 		arrUSer.addUser(newUser);
 		arrUSer.writeFile();
-		cout << "	Them Tai Khoan Thanh Cong";
+		cout << "\t\t\t\tThem Tai Khoan Thanh Cong";
 	}
-	else cout << "	Tai Khoan Da Ton Tai";
+	else cout << "\t\t\t\tTai Khoan Da Ton Tai";
 }
 void FeatureAdmin::chooseThree() {
 	ListUser arrUser;
 	arrUser.readFile();
 
-	cout << "	Nhap ID Muon Xoa: ";
+	cout << "\t\t\t\tNhap ID Muon Xoa: ";
 	string ID;
 	cin >> ID;
 
 	if (arrUser.search(ID)) {
 		arrUser.deleteUser(ID);
 		arrUser.writeFile();
-		cout << "	Xoa Tai Khoan Thanh Cong" << endl;
+		cout << "\t\t\t\tXoa Tai Khoan Thanh Cong" << endl;
 	}
-	else cout << "	Tai Khoan Khong Ton Tai" << endl;
+	else cout << "\t\t\t\tTai Khoan Khong Ton Tai" << endl;
 }
 void FeatureAdmin::chooseFour() {
 	ListUser arrUser;
 	arrUser.readFile();
 
-	cout << "	Nhap ID Muon Mo Khoa:";
+	cout << "\t\t\t\tNhap ID Muon Mo Khoa:";
 	string ID;
 	cin >> ID;
 
 	if (arrUser.search(ID))
 	{
-		cout << "	Mo Khoa Thanh Cong";
+		cout << "\t\t\t\tMo Khoa Thanh Cong";
 		arrUser.unlockUser(ID);
 	}
-	else cout << "	Tai Khoan Khong Ton Tai";
+	else cout << "\t\t\t\tTai Khoan Khong Ton Tai";
 }
 void FeatureAdmin::chooseFive() {
-	cout << "	Thoat Thanh Cong";
+	cout << "\t\t\t\tThoat Thanh Cong";
 	exit(0);
 }

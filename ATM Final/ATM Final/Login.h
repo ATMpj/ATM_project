@@ -12,8 +12,8 @@ public:
 	char getChoose();
 	void optionChoose();
 
-	void MenuAdmin();
-	void MenuUser();
+	void menuAdmin();
+	void menuUser();
 
 	void loginAdmin();
 	void userLogin();

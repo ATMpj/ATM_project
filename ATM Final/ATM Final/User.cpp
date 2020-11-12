@@ -1,25 +1,13 @@
 #include "User.h"
 
 //Class User
-string User::getID() {
-	return _strID;
-}
-string User::getPIN() {
-	return _strPIN;
-}
-void User::setID(string ID) {
-	this->_strID = ID;
-}
-void User::setPIN(string PIN) {
-	this->_strPIN = PIN;
-}
+string User::getID() {	return _strID; }
+string User::getPIN() {	return _strPIN; }
+void User::setID(string ID) { _strID = ID; }
+void User::setPIN(string PIN) {	_strPIN = PIN; }
 
-void User::lock() {
-	_bStatus = true;
-}
-void User::unlock() {
-	_bStatus = 0;
-}
+void User::lock() {	_bStatus = true; }
+void User::unlock() {	_bStatus = 0; }
 
 bool User::compare(vector<User>arrUser) {
 	for (int i = 0; i < arrUser.size(); i++)
@@ -97,8 +85,8 @@ bool ListUser::checkPIN(string ID, string PIN) {
 
 void ListUser::viewListUser() {
 	for (int i = 0; i < _arrUser.size(); i++) {
-		cout << "	ID: " << _arrUser[i].getID() << endl;
-		cout << "	PIN: " << _arrUser[i].getPIN() << endl;
+		cout << "\t\t\t\tID: " << _arrUser[i].getID() << endl;
+		cout << "\t\t\t\tPIN: " << _arrUser[i].getPIN() << endl;
 	}
 }
 vector<User> ListUser::getListUser() {
@@ -198,14 +186,14 @@ void ListInfoUser::takeMoney(string ID, string& s) {
 	for (int i = 0; i < _arrInfoUser.size(); i++) {
 		if (_arrInfoUser[i].getID() == ID) {
 			while (true) {
-				cout << "	Moi Ban Nhap So Tien Can Rut: ";
+				cout << "\t\t\t\tMoi Ban Nhap So Tien Can Rut: ";
 				cin >> s;
 				if (stoi(_arrInfoUser[i].getSurplus()) - stoi(s) >= stoi(s) && stoi(_arrInfoUser[i].getSurplus()) >= 50000) {
-					cout << "	Rut Tien Thanh Cong" << endl << endl;
+					cout << "\t\t\t\tRut Tien Thanh Cong" << endl << endl;
 					_arrInfoUser[i].setSurplus(to_string(stoi(_arrInfoUser[i].getSurplus()) - stoi(s)));
 					break;
 				}
-				else cout << "	Rut Tien That Bai" << endl;
+				else cout << "\t\t\t\tRut Tien That Bai" << endl;
 			}
 		}
 	}
@@ -239,10 +227,10 @@ bool ListInfoUser::checkMoney(string ID, string s) {
 void ListInfoUser::viewInfoUser(string ID) {
 	for (int i = 0; i < _arrInfoUser.size(); i++) {
 		if (ID == _arrInfoUser[i].getID()) {
-			cout << "	Id: " << _arrInfoUser[i].getID() << endl;
-			cout << "	Ten Tai Khoan: " << _arrInfoUser[i].getName() << endl;
-			cout << "	So Du: " << _arrInfoUser[i].getSurplus() << endl;
-			cout << "	Loai Tien Te: " << _arrInfoUser[i].getTypeCurrency() << endl << endl << endl;
+			cout << "\t\t\t\tId: " << _arrInfoUser[i].getID() << endl;
+			cout << "\t\t\t\tTen Tai Khoan: " << _arrInfoUser[i].getName() << endl;
+			cout << "\t\t\t\tSo Du: " << _arrInfoUser[i].getSurplus() << endl;
+			cout << "\t\t\t\toai Tien Te: " << _arrInfoUser[i].getTypeCurrency() << endl << endl << endl;
 			break;
 		}
 	}
@@ -288,10 +276,10 @@ void History::setTime(string time) {
 }
 
 void History::viewHistory() {
-	cout << "	ID: " << _strID << endl;
-	cout << "	Loai Giao Dich: " << _strTypeTransfer << endl;
-	cout << "	So Tien Giao Dich: " << _strMoneyTransfer << endl;
-	cout << "	Thoi Gian: " << time << endl << endl;
+	cout << "\t\t\t\tID: " << _strID << endl;
+	cout << "\t\t\t\tLoai Giao Dich: " << _strTypeTransfer << endl;
+	cout << "\t\t\t\tSo Tien Giao Dich: " << _strMoneyTransfer << endl;
+	cout << "\t\t\t\tThoi Gian: " << time << endl << endl;
 }
 
 
@@ -368,20 +356,20 @@ void ListHistory::showHistory(string ID) {
 //Class FeatureUser
 FeatureUser::FeatureUser() {
 	system("cls");
-	cout << endl << endl;
-	cout << "* * * * * * * * * * * * * * * * * * * * * * *" << endl;
-	cout << "*             DANG NHAP USER                *" << endl;
-	cout << "* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+
+	cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+	cout << "\t\t\t*             DANG NHAP USER                *" << endl;
+	cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
 	cout << endl;
 	_arrUser.readFile();
 }
 
 void FeatureUser::input() {
 	char c;
-	cout << "	ID: ";
+	cout << "\t\t\t\tID: ";
 	cin >> _strID;
 	_user.setID(_strID);
-	cout << "	PIN: ";
+	cout << "\t\t\t\tPIN: ";
 	/*c = _getch();
 	while (c != 13)
 	{
@@ -399,7 +387,7 @@ void FeatureUser::lockUser() {
 	if (_strIDTemp == _strID) _iDem++;
 	if (_iDem == 3) {
 		if (_arrUser.search(_strID)) {
-			cout << "	Tai Khoan Cua Ban Da Bi Khoa Do Nhap Sai Qua So Lan !!!";
+			cout << "\t\t\t\tTai Khoan Cua Ban Da Bi Khoa Do Nhap Sai Qua So Lan !!!";
 			_arrUser.lockUser(_strID);
 			exit(0);
 		}
@@ -409,7 +397,7 @@ void FeatureUser::lockUser() {
 }
 
 void FeatureUser::chooseOne() {
-	cout << endl << "	Thong Tin Tai Khoan: " << endl;
+	cout << endl << "\t\t\t\tThong Tin Tai Khoan: " << endl;
 	ListInfoUser arrInfoUser;
 	arrInfoUser.readFile(_arrUser);
 	arrInfoUser.viewInfoUser(_strID);
@@ -431,7 +419,7 @@ void FeatureUser::chooseTwo() {
 	History history;
 	history.setID(a.getID());
 	history.setTime(h);
-	history.setTypeTransfer("Rut Tien");
+	history.setTypeTransfer("\t\t\t\tRut Tien");
 	arrInfoUser.takeMoney(_strID, s);
 	history.setMoneyTransfer(s);
 
@@ -441,14 +429,14 @@ void FeatureUser::chooseTwo() {
 }
 void FeatureUser::chooseThree() {
 	while (true) {
-		cout << "	Nhap ID Tai Khoan Can Chuyen: ";
+		cout << "\t\t\t\tNhap ID Tai Khoan Can Chuyen: ";
 		string IDNeedTransfer;
 		cin >> IDNeedTransfer;
 		ListInfoUser arrInfoUser;
 		arrInfoUser.readFile(_arrUser);
 		if (arrInfoUser.check(IDNeedTransfer))
 		{
-			cout << "	Nhap So Tien Can Chuyen: ";
+			cout << "\t\t\t\tNhap So Tien Can Chuyen: ";
 			string money;
 			cin >> money;
 
@@ -467,14 +455,14 @@ void FeatureUser::chooseThree() {
 				_arrHistory.readFile(_arrUser);
 				history.setTime(timeTransfer);
 				history.setID(_strID);
-				history.setTypeTransfer("Da chuyen tien cho: " + arrInfoUser.getInfoUser(IDNeedTransfer).getName() + " voi ID chuyen den la: " + IDNeedTransfer);
+				history.setTypeTransfer("\t\t\t\tDa chuyen tien cho: " + arrInfoUser.getInfoUser(IDNeedTransfer).getName() + " voi ID chuyen den la: " + IDNeedTransfer);
 				history.setMoneyTransfer(money);
 				_arrHistory.add(history);
 				_arrHistory.writeFile2(_strID, IDNeedTransfer);
-				cout << "	Chuyen Tien Thanh Cong!!!" << endl;
+				cout << "\t\t\t\tChuyen Tien Thanh Cong!!!" << endl;
 				break;
 			}
-			else cout << "	So tien chuyen khong phu hop, Vui long nhap lai " << endl;
+			else cout << "\t\t\t\tSo tien chuyen khong phu hop, Vui long nhap lai " << endl;
 
 		}
 	}
@@ -487,35 +475,35 @@ void FeatureUser::chooseFour() {
 void FeatureUser::chooseFive() {
 	ListUser _arrUser;
 	_arrUser.readFile();
-	cout << "	Doi Ma Pin: " << endl << endl;
+	cout << "\t\t\t\tDoi Ma Pin: " << endl << endl;
 	while (true) {
-		cout << "	Nhap Ma PIN Hien Tai: ";
+		cout << "\t\t\t\tNhap Ma PIN Hien Tai: ";
 		string currentPIN;
 		cin >> currentPIN;
 		if (_arrUser.checkPIN(_strID, currentPIN)) {
 			while (true) {
 				string newPIN, newPIN2;
-				cout << "	Nhap Ma PIN Moi: ";
+				cout << "\t\t\t\tNhap Ma PIN Moi: ";
 				cin >> newPIN;
-				cout << "	Xac Nhan Ma PIN Moi: ";
+				cout << "\t\t\t\tXac Nhan Ma PIN Moi: ";
 				cin >> newPIN2;
 				if (newPIN == newPIN2)
 				{
 					_arrUser.changePIN(_strID, newPIN);
 					_arrUser.writeFile();
-					cout << "	Doi Ma Pin Thanh Cong" << endl;
+					cout << "\t\t\t\tDoi Ma Pin Thanh Cong" << endl;
 					break;
 				}
 				else
-					cout << "	Xac Nhan Lai Ma Pin Chua Dung" << endl;
+					cout << "\t\t\t\tXac Nhan Lai Ma Pin Chua Dung" << endl;
 			}
 			break;
 		}
-		else cout << "	Ma PIN Hien Tai Khong Dung" << endl;
+		else cout << "\t\t\t\tMa PIN Hien Tai Khong Dung" << endl;
 
 	}
 }
 void FeatureUser::chooseSix() {
-	cout << "	Thoat Thanh Cong";
+	cout << "\t\t\t\tThoat Thanh Cong";
 	exit(0);
 }

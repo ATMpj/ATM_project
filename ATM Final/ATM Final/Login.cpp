@@ -13,34 +13,35 @@ void Login::optionChoose()
 	hConsoleColor = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsoleColor, 12);
 	cout << endl << endl;
-	cout << "\tChon Loai Tai Khoan Dang Nhap:	" << endl;
-	cout << "\t1.Dang Nhap Tai Khoan Admin" << endl;
-	cout << "\t2.Dang Nhap Tai Khoan User" << endl << endl << endl;
-	cout << "\tNhap Lua Chon Cua Ban: ";
+	cout << "\n\n\t\t\t\tChon Loai Tai Khoan Dang Nhap:	\n\n" << endl;
+	cout << "\t\t\t\t1.Dang Nhap Tai Khoan Admin" << endl;
+	cout << "\t\t\t\t2.Dang Nhap Tai Khoan User\n\n\n\n";
+	cout << "\t\t\t\tNhap Lua Chon Cua Ban: ";
 	input();
 }
 
-void Login::MenuAdmin()
+void Login::menuAdmin()
 {
-	cout << "* * * * * * * * * * MENU * * * * * * * * * *" << endl << endl;
-	cout << "\t1. Xem danh sach tai khoan" << endl;
-	cout << "\t2. Them tai khoan" << endl;
-	cout << "\t3. Xoa tai khoan" << endl;
-	cout << "\t4. Mo khoa tai khoan" << endl;
-	cout << "\t5. Thoat" << endl << endl;
-	cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
+	cout << "\n\n\n\n\t\t\t* * * * * * * * * * MENU * * * * * * * * * *" << endl << endl;
+	cout << "\t\t\t\t1. Xem danh sach tai khoan" << endl;
+	cout << "\t\t\t\t1. Xem danh sach tai khoan" << endl;
+	cout << "\t\t\t\t2. Them tai khoan" << endl;
+	cout << "\t\t\t\t3. Xoa tai khoan" << endl;
+	cout << "\t\t\t\t4. Mo khoa tai khoan" << endl;
+	cout << "\t\t\t\t5. Thoat" << endl << endl;
+	cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
 }
-void Login::MenuUser()
+void Login::menuUser()
 {
 	system("cls");
-	cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
-	cout << "	1. Xem thong tin tai khoan" << endl;
-	cout << "	2. Rut tien" << endl;
-	cout << "	3. Chuyen tien" << endl;
-	cout << "	4. Xem noi dung giao dich" << endl;
-	cout << "	5. Doi ma PIN" << endl;
-	cout << "	6. Thoat" << endl << endl;
-	cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
+	cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
+	cout << "\t\t\t\t1. Xem thong tin tai khoan" << endl;
+	cout << "\t\t\t\t2. Rut tien" << endl;
+	cout << "\t\t\t\t3. Chuyen tien" << endl;
+	cout << "\t\t\t\t4. Xem noi dung giao dich" << endl;
+	cout << "\t\t\t\t5. Doi ma PIN" << endl;
+	cout << "\t\t\t\t6. Thoat" << endl << endl;
+	cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
 }
 
 void Login::loginAdmin()
@@ -53,11 +54,11 @@ void Login::loginAdmin()
 
 		if (feature.checkLogin())
 		{
-			cout << "	Dang Nhap Thanh Cong" << endl << endl;
+			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
 			system("cls");
 			while (true) {
-				MenuAdmin();
-				cout << endl << "	Moi Ban Nhap Lua Chon: ";
+				menuAdmin();
+				cout << endl << "\t\t\t\tMoi Ban Nhap Lua Chon: ";
 				char choose;
 				cin >> choose;
 
@@ -90,12 +91,12 @@ void Login::loginAdmin()
 
 				default:
 					system("cls");
-					cout << endl << "Nhap sai vui long nhap lai" << endl;
+					cout << endl << "\t\t\t\tNhap sai vui long nhap lai" << endl;
 					break;
 				}
 			}
 		}
-		else cout << "	Dang Nhap That Bai" << endl << endl;
+		else cout << "\t\t\t\tDang Nhap That Bai" << endl << endl;
 	}
 }
 void Login::userLogin() {
@@ -104,11 +105,11 @@ void Login::userLogin() {
 	while (true) {
 		feature.input();
 		if (feature.checkLogin()) {
-			cout << "	Dang Nhap Thanh Cong" << endl << endl;
-			MenuUser();
+			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
+			menuUser();
 
 			while (true) {
-				cout << "	Moi Ban Nhap Lua Chon: ";
+				cout << "\t\t\t\tMoi Ban Nhap Lua Chon: ";
 				int choose;
 				cin >> choose;
 
@@ -144,7 +145,7 @@ void Login::userLogin() {
 			}
 			break;
 		}
-		else cout << "	DANG NHAP THAT BAI" << endl << endl;
+		else cout << "\t\t\t\tDANG NHAP THAT BAI" << endl << endl;
 		feature.lockUser();
 	}
 }

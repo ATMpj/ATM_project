@@ -1,10 +1,20 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "Login.h"
+#include <Windows.h>
 
 using namespace std;
 
+void runProgram();
+
+int main()
+{
+	runProgram();
+	system("pause");
+	return 0;
+}
+
 void runProgram() {
+	//SetConsoleOutputCP(65001); // cho phep co tieng viet
 	while (true) {
 		Login login;
 		login.optionChoose();
@@ -20,14 +30,7 @@ void runProgram() {
 		}
 		else {
 			system("cls");
-			cout << endl << "Nhap sai, Vui long nhap lai" << endl; 
+			cout << endl << "\t\t\t\tNhap sai, Vui long nhap lai" << endl;
 		}
 	}
-}
-
-int main()
-{
-	runProgram();
-	system("pause");
-	return 0;
 }
