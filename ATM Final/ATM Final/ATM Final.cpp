@@ -31,6 +31,7 @@ void runProgram() {
 		else {
 			system("cls");
 			cout << endl << "\t\t\t\tNhap sai, Vui long nhap lai" << endl;
+			break;
 		}
 	}
 }

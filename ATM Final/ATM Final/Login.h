@@ -8,7 +8,7 @@ private:
 	char _cChoose;
 public:
 
-	void input();
+	void inputMyChoose();
 	char getChoose();
 	void optionChoose();
 

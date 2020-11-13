@@ -1,7 +1,7 @@
 #include "Login.h"
 
 
-void Login::input() {
+void Login::inputMyChoose() {
 	cin >> _cChoose;
 }
 char Login::getChoose() {
@@ -11,19 +11,18 @@ void Login::optionChoose()
 {
 	HANDLE hConsoleColor;
 	hConsoleColor = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsoleColor, 12);
+	SetConsoleTextAttribute(hConsoleColor, 14);
 	cout << endl << endl;
 	cout << "\n\n\t\t\t\tChon Loai Tai Khoan Dang Nhap:	\n\n" << endl;
 	cout << "\t\t\t\t1.Dang Nhap Tai Khoan Admin" << endl;
 	cout << "\t\t\t\t2.Dang Nhap Tai Khoan User\n\n\n\n";
 	cout << "\t\t\t\tNhap Lua Chon Cua Ban: ";
-	input();
+	inputMyChoose();
 }
 
 void Login::menuAdmin()
 {
 	cout << "\n\n\n\n\t\t\t* * * * * * * * * * MENU * * * * * * * * * *" << endl << endl;
-	cout << "\t\t\t\t1. Xem danh sach tai khoan" << endl;
 	cout << "\t\t\t\t1. Xem danh sach tai khoan" << endl;
 	cout << "\t\t\t\t2. Them tai khoan" << endl;
 	cout << "\t\t\t\t3. Xoa tai khoan" << endl;
@@ -75,12 +74,12 @@ void Login::loginAdmin()
 					break;
 
 				case '3':
-					system("cls");
+					//system("cls");
 					feature.chooseThree();
 					break;
 
 				case '4':
-					system("cls");
+					//system("cls");
 					feature.chooseFour();
 					break;
 
@@ -91,12 +90,12 @@ void Login::loginAdmin()
 
 				default:
 					system("cls");
-					cout << endl << "\t\t\t\tNhap sai vui long nhap lai" << endl;
+					cout << endl << "\n\t\t\t\tNhap sai vui long nhap lai" << endl;
 					break;
 				}
 			}
 		}
-		else cout << "\t\t\t\tDang Nhap That Bai" << endl << endl;
+		else cout << "\n\n\t\t\t\tDang Nhap That Bai" << endl << endl;
 	}
 }
 void Login::userLogin() {

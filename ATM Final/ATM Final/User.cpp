@@ -3,11 +3,21 @@
 //Class User
 string User::getID() {	return _strID; }
 string User::getPIN() {	return _strPIN; }
+bool User::getStatus() { return _bStatus; }
+
 void User::setID(string ID) { _strID = ID; }
 void User::setPIN(string PIN) {	_strPIN = PIN; }
+void User::setStatus(string status) {
+	if (status == "1") { _bStatus = true; }
+	if (status == "0") { _bStatus = false; }
+}
 
-void User::lock() {	_bStatus = true; }
-void User::unlock() {	_bStatus = 0; }
+void User::lock() {
+	_bStatus = false;
+}
+void User::unlock() {
+	_bStatus = true;
+}
 
 bool User::compare(vector<User>arrUser) {
 	for (int i = 0; i < arrUser.size(); i++)
@@ -19,29 +29,38 @@ bool User::compare(vector<User>arrUser) {
 //Class ListUser
 void ListUser::readFile() {
 	User user;
-	bool isID = true;
+	//bool isID = true;
+	int count = 1;
 	ifstream  file;
-	file.open("TheTu.txt");
+	file.open("ATM_data\\TheTu.txt");
 	while (!file.eof()) {
 		string temp;
-		if (isID) {
+		switch (count)
+		{
+		case 1:
 			getline(file, temp);
 			user.setID(temp);
-		}
-		else {
+			break;
+		case 2:
 			getline(file, temp);
 			user.setPIN(temp);
+			break;
+		case 3:
+			getline(file, temp);
+			user.setStatus(temp);
 			_arrUser.push_back(user);
+			count = 0;
+			break;
 		}
-		isID = !isID;
+		count++;
 	}
 	file.close();
 }
 void ListUser::writeFile() {
 	ofstream file;
-	file.open("TheTu.txt");
+	file.open("ATM_data\\TheTu.txt");
 	for (int i = 0; i < _arrUser.size(); i++) {
-		file << _arrUser[i].getID() << endl << _arrUser[i].getPIN();
+		file << _arrUser[i].getID() << endl << _arrUser[i].getPIN() << endl << _arrUser[i].getStatus();
 		if (i < _arrUser.size() - 1) file << endl;
 	}
 	file.close();
@@ -49,7 +68,10 @@ void ListUser::writeFile() {
 
 void ListUser::lockUser(string ID) {
 	for (int i = 0; i < _arrUser.size(); i++) {
-		if (_arrUser[i].getID() == ID) _arrUser[i].lock();
+		if (_arrUser[i].getID() == ID) {
+			_arrUser[i].lock();
+			writeFile();
+		}
 	}
 }
 void ListUser::unlockUser(string ID) {
@@ -84,9 +106,15 @@ bool ListUser::checkPIN(string ID, string PIN) {
 }
 
 void ListUser::viewListUser() {
+	string trangThai;
+	cout << "\t\t\tStt\t Id\t\t\t PIN\t\tTrang thai\n\n";
 	for (int i = 0; i < _arrUser.size(); i++) {
-		cout << "\t\t\t\tID: " << _arrUser[i].getID() << endl;
-		cout << "\t\t\t\tPIN: " << _arrUser[i].getPIN() << endl;
+		if (_arrUser[i].getStatus()) trangThai = "Dang SD";
+		else trangThai = "Bi khoa";
+		cout << "\t\t\t " << i << "\t";
+		cout << _arrUser[i].getID() << "\t\t";
+		cout << _arrUser[i].getPIN() << "\t\t ";
+		cout << trangThai << "\n";
 	}
 }
 vector<User> ListUser::getListUser() {
@@ -124,11 +152,12 @@ string InfoUser::getTypeCurrency() {
 
 //Class ListInfoUser
 void ListInfoUser::readFile(ListUser arrUser) {
-	for (int i = 0; i < arrUser.getListUser().size(); i++) {
+	vector<User> array = arrUser.getListUser();
+	for (int i = 0; i < array.size(); i++) {
 		InfoUser infoUser;
 		int count = 1;
 		string temp, path;
-		path = (arrUser.getListUser())[i].getID() + ".txt";
+		path = "ATM_data\\ID\\" + (array)[i].getID() + ".txt";
 		ifstream  file;
 		file.open(path);
 
@@ -163,7 +192,7 @@ void ListInfoUser::readFile(ListUser arrUser) {
 void ListInfoUser::wrtieFile() {
 	ofstream file;
 	for (int i = 0; i < _arrInfoUser.size(); i++) {
-		file.open(_arrInfoUser[i].getID() + ".txt");
+		file.open("ATM_data\\ID\\" + _arrInfoUser[i].getID() + ".txt");
 		file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
 		if (i < _arrInfoUser.size() - 1) file << endl;
 	}
@@ -173,7 +202,7 @@ void ListInfoUser::wrtieFile2(string ID) {
 	for (int i = 0; i < _arrInfoUser.size(); i++) {
 		if (ID == _arrInfoUser[i].getID()) {
 			ofstream file;
-			file.open(ID + ".txt");
+			file.open("ATM_data\\ID\\" + ID + ".txt");
 			file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
 			if (i < _arrInfoUser.size() - 1) file << endl;
 			file.close();
@@ -289,7 +318,7 @@ void ListHistory::readFile(ListUser arrUser) {
 		History history;
 		int count = 1;
 		string temp, path;
-		path = "LichSu" + (arrUser.getListUser())[i].getID() + ".txt";
+		path = "ATM_data\\LichSuGD\\LichSu" + (arrUser.getListUser())[i].getID() + ".txt";
 		ifstream  file;
 		file.open(path);
 		while (!file.eof()) {
@@ -318,7 +347,7 @@ void ListHistory::readFile(ListUser arrUser) {
 	}
 }
 void ListHistory::writeFile(string ID) {
-	string path = "LichSu" + ID + ".txt";
+	string path = "ATM_data\\LichSuGD\\LichSu" + ID + ".txt";
 	ofstream file;
 	file.open(path);
 	for (int i = 0; i < _arrHistory.size(); i++) {
@@ -330,7 +359,7 @@ void ListHistory::writeFile(string ID) {
 	file.close();
 }
 void ListHistory::writeFile2(string ID, string h) {
-	string path = "LichSu" + ID + ".txt";
+	string path = "ATM_data\\LichSuGD\\LichSu" + ID + ".txt";
 	ofstream file;
 	file.open(path);
 	for (int i = 0; i < _arrHistory.size(); i++) {
@@ -377,10 +406,10 @@ void FeatureUser::input() {
 		cout << "*";
 		c = _getch();
 	}*/
+	cin >> _strPIN;
 	_user.setPIN(_strPIN);
 }
 bool FeatureUser::checkLogin() {
-
 	return _user.compare(_arrUser.getListUser());
 }
 void FeatureUser::lockUser() {

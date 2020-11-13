@@ -20,8 +20,11 @@ private:
 public:
 	string getID();
 	string getPIN();
+	bool getStatus();
+
 	void setID(string ID);
 	void setPIN(string PIN);
+	void setStatus(string status);
 
 	void lock();
 	void unlock();
@@ -29,7 +32,7 @@ public:
 	bool compare(vector<User>arrUser);
 };
 
-class ListUser {
+class ListUser :public User {
 private:
 	vector<User> _arrUser;
 public:
@@ -52,16 +55,19 @@ public:
 class InfoUser {
 private:
 	string _strID, _strName, _strSurplus, _strTypeCurrency;
+	//bool _bStatus;
 public:
 	void setID(string ID);
 	void setName(string name);
 	void setTypeCurrency(string typeCurrency);
 	void setSurplus(string surplus);
-
+	//void setStatus(string status);
+	
 	string getID();
 	string getName();
 	string getSurplus();
 	string getTypeCurrency();
+	//bool getStatus();
 };
 
 class ListInfoUser {
@@ -114,7 +120,7 @@ public:
 	void showHistory(string ID);
 };
 
-class FeatureUser {
+class FeatureUser:public User {
 
 public:
 	ListUser _arrUser;

@@ -26,7 +26,7 @@ void ListAdmin::readFile() {
 	Admin admin;
 	bool isUser = true;
 	ifstream  file;
-	file.open("Admin.txt");
+	file.open("ATM_data\\Admin.txt");
 	while (!file.eof()) {
 		string temp;
 		if (isUser) {
@@ -73,7 +73,7 @@ bool FeatureAdmin::checkLogin() {
 }
 
 void FeatureAdmin::chooseOne() {
-	cout << "\t\t\t\tDanh Sach Tai Khoan" << endl;
+	cout << "\t\t\t\t\tDanh Sach Tai Khoan\n\n\n" << endl;
 
 	ListUser arrUser;
 	arrUser.readFile();
@@ -126,6 +126,7 @@ void FeatureAdmin::chooseFour() {
 	{
 		cout << "\t\t\t\tMo Khoa Thanh Cong";
 		arrUser.unlockUser(ID);
+		arrUser.writeFile();
 	}
 	else cout << "\t\t\t\tTai Khoan Khong Ton Tai";
 }
