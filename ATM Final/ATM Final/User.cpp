@@ -21,7 +21,7 @@ void User::unlock() {
 
 bool User::compare(vector<User>arrUser) {
 	for (int i = 0; i < arrUser.size(); i++)
-		if (arrUser[i].getID() == _strID && arrUser[i].getPIN() == _strPIN && _bStatus == false) return true;
+		if (arrUser[i].getID() == _strID && arrUser[i].getPIN() == _strPIN && arrUser[i].getStatus() == true) return true;
 	return false;
 }
 
@@ -259,7 +259,7 @@ void ListInfoUser::viewInfoUser(string ID) {
 			cout << "\t\t\t\tId: " << _arrInfoUser[i].getID() << endl;
 			cout << "\t\t\t\tTen Tai Khoan: " << _arrInfoUser[i].getName() << endl;
 			cout << "\t\t\t\tSo Du: " << _arrInfoUser[i].getSurplus() << endl;
-			cout << "\t\t\t\toai Tien Te: " << _arrInfoUser[i].getTypeCurrency() << endl << endl << endl;
+			cout << "\t\t\t\tLoai Tien Te: " << _arrInfoUser[i].getTypeCurrency() << endl << endl << endl;
 			break;
 		}
 	}

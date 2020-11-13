@@ -81,20 +81,37 @@ void FeatureAdmin::chooseOne() {
 }
 void FeatureAdmin::chooseTwo() {
 	ListUser arrUSer;
+	ListInfoUser arrInfoUser;
 	arrUSer.readFile();
-
+		string newID, newName, newSurplus, newType;
 	cout << "\t\t\t\tNhap ID Muon Them: ";
-
-	string newID;
 	cin >> newID;
-
+	cout << "\t\t\t\tNhap Ho va Ten: ";
+	cin >> newName;
+	cout << "\t\t\t\tNhap so du: ";
+	cin >> newSurplus;
+	cout << "\t\t\t\tNhap loai tien te( Mac dinh VND): ";
+	cin >> newType;
 	if (arrUSer.search(newID) == false) {
 
 		User newUser;
+		InfoUser newInfo;
 		newUser.setID(newID);
-		newUser.setPIN("1111");
+		newUser.setPIN("123456");
 		arrUSer.addUser(newUser);
 		arrUSer.writeFile();
+
+		newInfo.setID(newID);
+		newInfo.setName(newName);
+		newInfo.setSurplus(newSurplus);
+		newInfo.setTypeCurrency(newType);
+		
+		ofstream newFile;
+		newFile.open("ATM_data\\ID\\" + newID + ".txt");
+
+		//arrInfoUser.wrtieFile2(newID);
+		
+		newFile.close();
 		cout << "\t\t\t\tThem Tai Khoan Thanh Cong";
 	}
 	else cout << "\t\t\t\tTai Khoan Da Ton Tai";

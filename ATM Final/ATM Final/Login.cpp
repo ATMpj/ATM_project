@@ -69,7 +69,7 @@ void Login::loginAdmin()
 					break;
 
 				case '2':
-					system("cls");
+					//system("cls");
 					feature.chooseTwo();
 					break;
 
@@ -144,7 +144,7 @@ void Login::userLogin() {
 			}
 			break;
 		}
-		else cout << "\t\t\t\tDANG NHAP THAT BAI" << endl << endl;
+		else cout << "\n\t\t\t\tDANG NHAP THAT BAI" << endl << endl;
 		feature.lockUser();
 	}
 }
