@@ -107,9 +107,9 @@ void FeatureAdmin::chooseTwo() {
 		newInfo.setTypeCurrency(newType);
 		
 		ofstream newFile;
-		newFile.open("ATM_data\\ID\\" + newID + ".txt");
+		newFile.open("ATM_data\\LichSuGD\\LichSu" + newID + ".txt");
 
-		//arrInfoUser.wrtieFile2(newID);
+		arrInfoUser.wrtieFile2(newID);
 		
 		newFile.close();
 		cout << "\t\t\t\tThem Tai Khoan Thanh Cong";

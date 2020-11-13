@@ -198,17 +198,24 @@ void ListInfoUser::wrtieFile() {
 	}
 	file.close();
 }
+//void ListInfoUser::wrtieFile2(string ID) {
+//	for (int i = 0; i < _arrInfoUser.size(); i++) {
+//		if (ID == _arrInfoUser[i].getID()) {
+//			ofstream file;
+//			file.open("ATM_data\\ID\\" + ID + ".txt");
+//			file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
+//			if (i < _arrInfoUser.size() - 1) file << endl;
+//			file.close();
+//			break;
+//		}
+//	}
+//}
 void ListInfoUser::wrtieFile2(string ID) {
-	for (int i = 0; i < _arrInfoUser.size(); i++) {
-		if (ID == _arrInfoUser[i].getID()) {
 			ofstream file;
 			file.open("ATM_data\\ID\\" + ID + ".txt");
-			file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
-			if (i < _arrInfoUser.size() - 1) file << endl;
+			//file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
+			//if (i < _arrInfoUser.size() - 1) file << endl;
 			file.close();
-			break;
-		}
-	}
 }
 
 void ListInfoUser::takeMoney(string ID, string& s) {
