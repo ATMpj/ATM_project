@@ -1,5 +1,13 @@
 #include "User.h"
 
+COORD coord = { 0, 0 };
+
+void goToXY(int x, int y) {	//defining/initializing to predefined objects
+	coord.X = x;
+	coord.Y = y; // X and Y coordinates
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
 //Class User
 string User::getID() {	return _strID; }
 string User::getPIN() {	return _strPIN; }
@@ -190,34 +198,34 @@ void ListInfoUser::readFile(ListUser arrUser) {
 
 	}
 }
-void ListInfoUser::wrtieFile() {
-	ofstream file;
-	for (int i = 0; i < _arrInfoUser.size(); i++) {
-		file.open("ATM_data\\ID\\" + _arrInfoUser[i].getID() + ".txt");
-		file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
-		if (i < _arrInfoUser.size() - 1) file << endl;
-	}
-	file.close();
-}
-//void ListInfoUser::wrtieFile2(string ID) {
+//void ListInfoUser::wrtieFile() {
+//	ofstream file;
 //	for (int i = 0; i < _arrInfoUser.size(); i++) {
-//		if (ID == _arrInfoUser[i].getID()) {
-//			ofstream file;
-//			file.open("ATM_data\\ID\\" + ID + ".txt");
-//			file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
-//			if (i < _arrInfoUser.size() - 1) file << endl;
-//			file.close();
-//			break;
-//		}
+//		file.open("ATM_data\\ID\\" + _arrInfoUser[i].getID() + ".txt");
+//		file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
+//		if (i < _arrInfoUser.size() - 1) file << endl;
 //	}
+//	file.close();
 //}
 void ListInfoUser::wrtieFile2(string ID) {
+	for (int i = 0; i < _arrInfoUser.size(); i++) {
+		if (ID == _arrInfoUser[i].getID()) {
 			ofstream file;
 			file.open("ATM_data\\ID\\" + ID + ".txt");
-			//file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
-			//if (i < _arrInfoUser.size() - 1) file << endl;
+			file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
+			if (i < _arrInfoUser.size() - 1) file << endl;
 			file.close();
+			break;
+		}
+	}
 }
+//void ListInfoUser::wrtieFile2(string ID) {
+//			ofstream file;
+//			file.open("ATM_data\\ID\\" + ID + ".txt");
+//			//file << _arrInfoUser[i].getID() << endl << _arrInfoUser[i].getName() << endl << _arrInfoUser[i].getSurplus() << endl << _arrInfoUser[i].getTypeCurrency();
+//			//if (i < _arrInfoUser.size() - 1) file << endl;
+//			file.close();
+//}
 
 void ListInfoUser::takeMoney(string ID, string& s) {
 	for (int i = 0; i < _arrInfoUser.size(); i++) {
@@ -225,12 +233,24 @@ void ListInfoUser::takeMoney(string ID, string& s) {
 			while (true) {
 				cout << "\t\t\t\tMoi Ban Nhap So Tien Can Rut: ";
 				cin >> s;
+				cout << endl << endl;
+				cout << "\t\tHe thong dang chay, doi xiu nhe";
+				Sleep(400);
+				cout << ".";
+				Sleep(400);
+				cout << ".";
+				Sleep(400);
+				cout << ".";
+				Sleep(400);
+				cout << endl;
 				if (stoi(_arrInfoUser[i].getSurplus()) - stoi(s) >= stoi(s) && stoi(_arrInfoUser[i].getSurplus()) >= 50000) {
 					cout << "\t\t\t\tRut Tien Thanh Cong" << endl << endl;
 					_arrInfoUser[i].setSurplus(to_string(stoi(_arrInfoUser[i].getSurplus()) - stoi(s)));
+					Sleep(400);
 					break;
 				}
 				else cout << "\t\t\t\tRut Tien That Bai" << endl;
+				Sleep(400);
 			}
 		}
 	}
@@ -404,12 +424,36 @@ void FeatureUser::input() {
 	_user.setID(_strID);
 
 	cout << "\t\t\t\t@PIN:    ";
+	int i = 41;
 	c = _getch();
-	while (c != 13)
-	{
-		pin.push_back(c);
-		cout << "*";
+	while (c == 8) {
 		c = _getch();
+	}
+	while (c != 13) {
+		if (c != 8) {
+			pin.push_back(c);
+			goToXY(i, 9);
+			cout << "*";
+			i++;
+			c = _getch();
+		}
+		else {
+			while (i > 41) {
+				do {
+					pin.erase(pin.end() - 1);
+					goToXY(i - 1, 9);
+					cout << " ";
+					i--;
+					c = _getch();
+				} while (pin.empty() == false);
+				if (pin.empty() == true) {
+					c = _getch();
+					while (c == 8) {
+						c = _getch();
+					}
+				}
+			}
+		}
 	}
 	_strPIN = pin;
 	_user.setPIN(_strPIN);
@@ -473,7 +517,15 @@ void FeatureUser::chooseThree() {
 			cout << "\t\t\t\tNhap So Tien Can Chuyen: ";
 			string money;
 			cin >> money;
-
+			cout << "He thong dang chay, doi xiu nhe";
+			Sleep(400);
+			cout << ".";
+			Sleep(400);
+			cout << ".";
+			Sleep(400);
+			cout << ".";
+			Sleep(400);
+			cout << endl;
 			if (arrInfoUser.checkMoney(_strID, money) && IDNeedTransfer != _strID) {
 				arrInfoUser.transferMoney(_strID, money, IDNeedTransfer);
 				arrInfoUser.wrtieFile2(_strID);
@@ -489,15 +541,18 @@ void FeatureUser::chooseThree() {
 				_arrHistory.readFile(_arrUser);
 				history.setTime(timeTransfer);
 				history.setID(_strID);
-				history.setTypeTransfer("\t\t\t\tDa chuyen tien cho: " + arrInfoUser.getInfoUser(IDNeedTransfer).getName() + " voi ID chuyen den la: " + IDNeedTransfer);
+				history.setTypeTransfer(" Da chuyen tien cho: " + arrInfoUser.getInfoUser(IDNeedTransfer).getName() + " voi ID chuyen den la: " + IDNeedTransfer);
 				history.setMoneyTransfer(money);
 				_arrHistory.add(history);
 				_arrHistory.writeFile2(_strID, IDNeedTransfer);
 				cout << "\t\t\t\tChuyen Tien Thanh Cong!!!" << endl;
+				Sleep(400);
 				break;
 			}
-			else cout << "\t\t\t\tSo tien chuyen khong phu hop, Vui long nhap lai " << endl;
-
+			else {
+				cout << "\t\t\t\tSo tien chuyen khong phu hop, Vui long nhap lai " << endl;
+				Sleep(400);
+			}
 		}
 	}
 }
@@ -521,20 +576,32 @@ void FeatureUser::chooseFive() {
 				cin >> newPIN;
 				cout << "\t\t\t\tXac Nhan Ma PIN Moi: ";
 				cin >> newPIN2;
+				cout << "He thong dang chay, doi xiu nhe";
+				Sleep(400);
+				cout << ".";
+				Sleep(400);
+				cout << ".";
+				Sleep(400);
+				cout << ".";
+				Sleep(400);
+				cout << endl;
 				if (newPIN == newPIN2)
 				{
 					_arrUser.changePIN(_strID, newPIN);
 					_arrUser.writeFile();
 					cout << "\t\t\t\tDoi Ma Pin Thanh Cong" << endl;
+					Sleep(400);
 					break;
 				}
-				else
+				else {
 					cout << "\t\t\t\tXac Nhan Lai Ma Pin Chua Dung" << endl;
+					Sleep(400);
+				}
 			}
 			break;
 		}
 		else cout << "\t\t\t\tMa PIN Hien Tai Khong Dung" << endl;
-
+		Sleep(400);
 	}
 }
 void FeatureUser::chooseSix() {

@@ -61,10 +61,21 @@ void Login::loginAdmin()
 		cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
 		cout << endl;
 		feature.input();
+		cout << endl << endl;
+		cout << "\t\tHe thong dang chay, doi xiu nhe";
+		Sleep(400);
+		cout << ".";
+		Sleep(400);
+		cout << ".";
+		Sleep(400);
+		cout << ".";
+		Sleep(400);
+		cout << endl;
 		switch (feature.checkLogin())
 		{
 		case true:
 			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
+			Sleep(400);
 			system("cls");
 			while (true) {
 				menuAdmin();
@@ -130,9 +141,19 @@ void Login::userLogin() {
 		cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
 		cout << endl;
 		feature.input();
+		cout << endl << endl;
+		cout << "\t\tHe thong dang chay, doi xiu nhe";
+		Sleep(400);
+		cout << ".";
+		Sleep(400);
+		cout << ".";
+		Sleep(400);
+		cout << ".";
+		Sleep(400);
+		cout << endl;
 		if (feature.checkLogin()) {
 			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
-
+			Sleep(400);
 			while (true) {
 				menuUser();
 				cout << "\t\t\t\tMoi Ban Nhap Lua Chon: ";
@@ -144,7 +165,7 @@ void Login::userLogin() {
 				case 1:
 					system("cls");
 					feature.chooseOne();
-					cout << "\n\t\t\tNhan phim bat ky de quay lai USER_MENU: ";
+					cout << "\n\t\t\tNhap phim bat ky de quay lai USER_MENU: ";
 					if (cin >> choose) {
 						system("cls");
 						break;
@@ -163,7 +184,7 @@ void Login::userLogin() {
 				case 4:
 					system("cls");
 					feature.chooseFour();
-					cout << "\n\t\t\tNhan phim bat ky de quay lai USER_MENU: ";
+					cout << "\n\t\t\tNhap phim bat ky de quay lai USER_MENU: ";
 					if (cin >> choose) {
 						system("cls");
 						break;

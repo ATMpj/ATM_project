@@ -9,7 +9,6 @@
 #include <vector>
 #include <conio.h>
 #include <cmath>
-#include <Windows.h>
 
 
 using namespace std;
@@ -77,7 +76,6 @@ private:
 	vector<InfoUser>_arrInfoUser;
 public:
 	void readFile(ListUser arrUser);
-	void wrtieFile();
 	void wrtieFile2(string ID);
 
 	void takeMoney(string ID, string& s);

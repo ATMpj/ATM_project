@@ -1,29 +1,33 @@
-﻿  User.cpp
-D:\ATM_project\ATM Final\ATM Final\User.cpp(23,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(63,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(65,9): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(94,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(99,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(104,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(157,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(195,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(198,9): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(223,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(240,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(249,21): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(257,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(265,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(276,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(282,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(325,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(361,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(364,10): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(373,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(376,10): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(387,20): warning C4018: '<': signed/unsigned mismatch
-D:\ATM_project\ATM Final\ATM Final\User.cpp(285): warning C4715: 'ListInfoUser::getInfoUser': not all control paths return a value
-  ATM Final.vcxproj -> D:\ATM_project\ATM Final\Debug\ATM Final.exe
+﻿  Admin.cpp
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\Admin.cpp(26,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\Admin.cpp(111,6): warning C4101: 'choose': unreferenced local variable
+  User.cpp
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(31,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(73,9): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(93,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(102,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(107,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(120,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(165,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(211,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(216,10): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(231,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(260,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(269,21): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(277,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(285,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(296,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(302,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(345,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(381,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(384,10): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(393,20): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(396,10): warning C4018: '<': signed/unsigned mismatch
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(407,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\ATM Final\User.cpp(305): warning C4715: 'ListInfoUser::getInfoUser': not all control paths return a value
+  ATM Final.vcxproj -> D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project-master\ATM Final\Debug\ATM Final.exe
