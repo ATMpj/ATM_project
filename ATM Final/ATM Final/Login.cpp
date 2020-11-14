@@ -62,20 +62,29 @@ void Login::loginAdmin()
 		cout << endl;
 		feature.input();
 		cout << endl << endl;
-		cout << "\t\tHe thong dang chay, doi xiu nhe";
-		Sleep(400);
-		cout << ".";
-		Sleep(400);
-		cout << ".";
-		Sleep(400);
-		cout << ".";
-		Sleep(400);
+		cout << "\t\t\tHe thong dang chay, doi xiu nhe: ";
+		Sleep(700);
+		cout << "L";
+		Sleep(700);
+		cout << "o";
+		Sleep(700);
+		cout << "a";
+		Sleep(700);
+		cout << "d";
+		Sleep(700);
+		cout << "i";
+		Sleep(700);
+		cout << "n";
+		Sleep(700);
+		cout << "g";
+		Sleep(700);
+		cout << endl;
 		cout << endl;
 		switch (feature.checkLogin())
 		{
 		case true:
-			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
-			Sleep(400);
+			cout << "\t\t\t\tDANG NHAP THANH CONG" << endl << endl;
+			Sleep(3000);
 			system("cls");
 			while (true) {
 				menuAdmin();
@@ -142,18 +151,26 @@ void Login::userLogin() {
 		cout << endl;
 		feature.input();
 		cout << endl << endl;
-		cout << "\t\tHe thong dang chay, doi xiu nhe";
-		Sleep(400);
-		cout << ".";
-		Sleep(400);
-		cout << ".";
-		Sleep(400);
-		cout << ".";
-		Sleep(400);
+		cout << "\t\t\tHe thong dang chay, doi xiu nhe: ";
+		Sleep(700);
+		cout << "L";
+		Sleep(700);
+		cout << "o";
+		Sleep(700);
+		cout << "a";
+		Sleep(700);
+		cout << "d";
+		Sleep(700);
+		cout << "i";
+		Sleep(700);
+		cout << "n";
+		Sleep(700);
+		cout << "g";
+		Sleep(700);
 		cout << endl;
 		if (feature.checkLogin()) {
-			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
-			Sleep(400);
+			cout << "\n\t\t\t\tDANG NHAP THANH CONG" << endl << endl;
+			Sleep(3000);
 			while (true) {
 				menuUser();
 				cout << "\t\t\t\tMoi Ban Nhap Lua Chon: ";

@@ -234,7 +234,7 @@ void ListInfoUser::takeMoney(string ID, string& s) {
 				cout << "\t\t\t\tMoi Ban Nhap So Tien Can Rut: ";
 				cin >> s;
 				cout << endl << endl;
-				cout << "\t\tHe thong dang chay, doi xiu nhe";
+				cout << "\t\t\tHe thong dang chay, doi xiu nhe";
 				Sleep(400);
 				cout << ".";
 				Sleep(400);
@@ -284,10 +284,12 @@ bool ListInfoUser::checkMoney(string ID, string s) {
 void ListInfoUser::viewInfoUser(string ID) {
 	for (int i = 0; i < _arrInfoUser.size(); i++) {
 		if (ID == _arrInfoUser[i].getID()) {
-			cout << "\t\t\t\tId: " << _arrInfoUser[i].getID() << endl;
-			cout << "\t\t\t\tTen Tai Khoan: " << _arrInfoUser[i].getName() << endl;
-			cout << "\t\t\t\tSo Du: " << _arrInfoUser[i].getSurplus() << endl;
-			cout << "\t\t\t\tLoai Tien Te: " << _arrInfoUser[i].getTypeCurrency() << endl << endl << endl;
+			cout << "\t\t\t************************************************\n";
+			cout << "\t\t\t\t@  Id:            " << _arrInfoUser[i].getID() << endl;
+			cout << "\t\t\t\t@  Ten Tai Khoan: " << _arrInfoUser[i].getName() << endl;
+			cout << "\t\t\t\t@  So Du:         " << _arrInfoUser[i].getSurplus() << endl;
+			cout << "\t\t\t\t@  Loai Tien Te:  " << _arrInfoUser[i].getTypeCurrency() << endl;
+			cout << "\t\t\t************************************************\n" << endl << endl << endl;
 			break;
 		}
 	}
@@ -475,7 +477,7 @@ void FeatureUser::lockUser() {
 }
 
 void FeatureUser::chooseOne() {
-	cout << endl << "\t\t\t\tThong Tin Tai Khoan: " << endl;
+	cout << endl << "\t\t\t\tTHONG TIN TAI KHOAN: \n " << endl;
 	ListInfoUser arrInfoUser;
 	arrInfoUser.readFile(_arrUser);
 	arrInfoUser.viewInfoUser(_strID);
@@ -517,7 +519,7 @@ void FeatureUser::chooseThree() {
 			cout << "\t\t\t\tNhap So Tien Can Chuyen: ";
 			string money;
 			cin >> money;
-			cout << "He thong dang chay, doi xiu nhe";
+			cout << "\t\t\tHe thong dang chay, doi xiu nhe";
 			Sleep(400);
 			cout << ".";
 			Sleep(400);
@@ -576,7 +578,7 @@ void FeatureUser::chooseFive() {
 				cin >> newPIN;
 				cout << "\t\t\t\tXac Nhan Ma PIN Moi: ";
 				cin >> newPIN2;
-				cout << "He thong dang chay, doi xiu nhe";
+				cout << "\t\t\tHe thong dang chay, doi xiu nhe";
 				Sleep(400);
 				cout << ".";
 				Sleep(400);

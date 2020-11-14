@@ -1,2 +1,3 @@
-﻿  Login.cpp
-  ATM Final.vcxproj -> D:\courses\LTNC\CTDL\ATM Project\Project ATM END\ATM_project\ATM Final\x64\Debug\ATM Final.exe
+﻿  User.cpp
+D:\ATM_project\ATM Final\ATM Final\User.cpp(307): warning C4715: 'ListInfoUser::getInfoUser': not all control paths return a value
+  ATM Final.vcxproj -> D:\ATM_project\ATM Final\x64\Debug\ATM Final.exe
