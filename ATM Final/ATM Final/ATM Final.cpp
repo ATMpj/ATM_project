@@ -18,19 +18,19 @@ void runProgram() {
 	while (true) {
 		Login login;
 		login.optionChoose();
+		char choose = login.getChoose();
 
-		if (login.getChoose() == '1') {
+		switch (choose)
+		{
+		case '1':
 			login.loginAdmin();
 			break;
-		}
-
-		else if (login.getChoose() == '2') {
+		case '2':
 			login.userLogin();
 			break;
-		}
-		else {
+		default:
 			system("cls");
-			cout << endl << "\t\t\t\tNhap sai, Vui long nhap lai" << endl;
+			cout << endl << "\t\t\tNHAP SAI ROI CON HANG!!!\n\t\t\tNHAP LAI DEE (>_<)";
 			break;
 		}
 	}

@@ -20,8 +20,9 @@ void User::unlock() {
 }
 
 bool User::compare(vector<User>arrUser) {
-	for (int i = 0; i < arrUser.size(); i++)
+	for (int i = 0; i < arrUser.size(); i++) {
 		if (arrUser[i].getID() == _strID && arrUser[i].getPIN() == _strPIN && arrUser[i].getStatus() == true) return true;
+	}
 	return false;
 }
 
@@ -392,28 +393,25 @@ void ListHistory::showHistory(string ID) {
 //Class FeatureUser
 FeatureUser::FeatureUser() {
 	system("cls");
-
-	cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
-	cout << "\t\t\t*             DANG NHAP USER                *" << endl;
-	cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
-	cout << endl;
 	_arrUser.readFile();
 }
 
 void FeatureUser::input() {
 	char c;
-	cout << "\t\t\t\tID: ";
+	string pin;
+	cout << "\t\t\t\t@ID:     ";
 	cin >> _strID;
 	_user.setID(_strID);
-	cout << "\t\t\t\tPIN: ";
-	/*c = _getch();
+
+	cout << "\t\t\t\t@PIN:    ";
+	c = _getch();
 	while (c != 13)
 	{
-		_strPIN.push_back(c);
+		pin.push_back(c);
 		cout << "*";
 		c = _getch();
-	}*/
-	cin >> _strPIN;
+	}
+	_strPIN = pin;
 	_user.setPIN(_strPIN);
 }
 bool FeatureUser::checkLogin() {
@@ -423,7 +421,7 @@ void FeatureUser::lockUser() {
 	if (_strIDTemp == _strID) _iDem++;
 	if (_iDem == 3) {
 		if (_arrUser.search(_strID)) {
-			cout << "\t\t\t\tTai Khoan Cua Ban Da Bi Khoa Do Nhap Sai Qua So Lan !!!";
+			cout << "\t\t\tTAI KHOAN CUA BAN DA BI KHOA DO NHAP SAI MAT KHAU QUA 3 LAN !!!";
 			_arrUser.lockUser(_strID);
 			exit(0);
 		}

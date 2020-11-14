@@ -1,4 +1,4 @@
-#include "Login.h"
+﻿#include "Login.h"
 
 
 void Login::inputMyChoose() {
@@ -12,17 +12,24 @@ void Login::optionChoose()
 	HANDLE hConsoleColor;
 	hConsoleColor = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsoleColor, 14);
+
 	cout << endl << endl;
-	cout << "\n\n\t\t\t\tChon Loai Tai Khoan Dang Nhap:	\n\n" << endl;
-	cout << "\t\t\t\t1.Dang Nhap Tai Khoan Admin" << endl;
-	cout << "\t\t\t\t2.Dang Nhap Tai Khoan User\n\n\n\n";
-	cout << "\t\t\t\tNhap Lua Chon Cua Ban: ";
-	inputMyChoose();
+	cout << "\n\n\t\t\t\tChon Loai Tai Khoan Dang Nhap:\n";
+	cout << "\t\t==============================(@_@)===============================\n\n";
+	cout << "\t\t\t=================================================\n";
+	cout << "\t\t\t|*\t                                       *|\n";
+	cout << "\t\t\t|*\t1.Dang Nhap Tai Khoan Admin            *|\n";
+	cout << "\t\t\t|*\t2.Dang Nhap Tai Khoan User             *|\n";
+	cout << "\t\t\t|*\t                                       *|\n";
+	cout << "\t\t\t=================================================\n\n\n\n";
+	cout << "\t\t\t\tNhap Lua Chon Cua Ban:  ";
+	inputMyChoose();	
 }
 
 void Login::menuAdmin()
 {
-	cout << "\n\n\n\n\t\t\t* * * * * * * * * * MENU * * * * * * * * * *" << endl << endl;
+	cout << "\n\n\n\n";
+	cout << "\t\t\t* * * * * * * * ADMIN_MENU * * * * * * * * *" << endl << endl;
 	cout << "\t\t\t\t1. Xem danh sach tai khoan" << endl;
 	cout << "\t\t\t\t2. Them tai khoan" << endl;
 	cout << "\t\t\t\t3. Xoa tai khoan" << endl;
@@ -33,7 +40,8 @@ void Login::menuAdmin()
 void Login::menuUser()
 {
 	system("cls");
-	cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * *" << endl << endl;
+	cout << "\n\n\n\n";
+	cout << "\t\t\t* * * * * * * * USER_MENU * * * * * * * * *" << endl << endl;
 	cout << "\t\t\t\t1. Xem thong tin tai khoan" << endl;
 	cout << "\t\t\t\t2. Rut tien" << endl;
 	cout << "\t\t\t\t3. Chuyen tien" << endl;
@@ -46,13 +54,16 @@ void Login::menuUser()
 void Login::loginAdmin()
 {
 	FeatureAdmin feature;
-
 	while (true) {
 
+		cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+		cout << "\t\t\t*             DANG NHAP ADMIN                *" << endl;
+		cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+		cout << endl;
 		feature.input();
-
-		if (feature.checkLogin())
+		switch (feature.checkLogin())
 		{
+		case true:
 			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
 			system("cls");
 			while (true) {
@@ -66,21 +77,31 @@ void Login::loginAdmin()
 				case '1':
 					system("cls");
 					feature.chooseOne();
-					break;
-
+					cout << "\n\t\t\tNhan phim bat ky de quay lai ADMIN_MENU: ";
+					if (cin >> choose) {
+						system("cls");
+						break;
+					}
+					
 				case '2':
-					//system("cls");
+					system("cls");
+					feature.chooseOne();
 					feature.chooseTwo();
+					feature.chooseOne();
 					break;
 
 				case '3':
-					//system("cls");
+					system("cls");
+					feature.chooseOne();
 					feature.chooseThree();
+					feature.chooseOne();
 					break;
 
 				case '4':
-					//system("cls");
+					system("cls");
+					feature.chooseOne();
 					feature.chooseFour();
+					feature.chooseOne();
 					break;
 
 				case '5':
@@ -90,24 +111,30 @@ void Login::loginAdmin()
 
 				default:
 					system("cls");
-					cout << endl << "\n\t\t\t\tNhap sai vui long nhap lai" << endl;
+					cout << endl << "\t\t\tNHAP SAI ROI CON HANG!!!\n\t\t\tNHAP LAI DEE (>_<)";
 					break;
 				}
 			}
+		default:
+			system("cls");
+			cout << "\n\n\t\t\tDANG NHAP THAT BAI!!!\n\t\t\tTU KIEM TRA LAI DEEE \\(T_T)/\n";
+			break;
 		}
-		else cout << "\n\n\t\t\t\tDang Nhap That Bai" << endl << endl;
 	}
 }
 void Login::userLogin() {
 	FeatureUser feature;
-
 	while (true) {
+		cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+		cout << "\t\t\t*             DANG NHAP USER                *" << endl;
+		cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
+		cout << endl;
 		feature.input();
 		if (feature.checkLogin()) {
 			cout << "\t\t\t\tDang Nhap Thanh Cong" << endl << endl;
-			menuUser();
 
 			while (true) {
+				menuUser();
 				cout << "\t\t\t\tMoi Ban Nhap Lua Chon: ";
 				int choose;
 				cin >> choose;
@@ -115,36 +142,55 @@ void Login::userLogin() {
 				switch (choose)
 				{
 				case 1:
+					system("cls");
 					feature.chooseOne();
-					break;
+					cout << "\n\t\t\tNhan phim bat ky de quay lai USER_MENU: ";
+					if (cin >> choose) {
+						system("cls");
+						break;
+					}
 
 				case 2:
+					system("cls");
 					feature.chooseTwo();
 					break;
 
 				case 3:
+					system("cls");
 					feature.chooseThree();
 					break;
 
 				case 4:
+					system("cls");
 					feature.chooseFour();
-					break;
+					cout << "\n\t\t\tNhan phim bat ky de quay lai USER_MENU: ";
+					if (cin >> choose) {
+						system("cls");
+						break;
+					}
 
 				case 5:
+					system("cls");
 					feature.chooseFive();
 					break;
 
 				case 6:
+					system("cls");
 					feature.chooseSix();
 					break;
 
 				default:
+					system("cls");
+					cout << endl << "\t\t\tNHAP SAI ROI CON HANG!!!\n\t\t\tNHAP LAI DEE (>_<)";
 					break;
 				}
 			}
 			break;
 		}
-		else cout << "\n\t\t\t\tDANG NHAP THAT BAI" << endl << endl;
+		else {
+			system("cls");
+			cout << "\n\n\t\t\tDANG NHAP THAT BAI!!!\n\t\t\tVUI LONG NHAP LAI ID & PIN \\(T_T)/\n";
+		}
 		feature.lockUser();
 	}
 }

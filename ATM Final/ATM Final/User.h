@@ -2,13 +2,15 @@
 #pragma warning(disable : 4996)
 #include <iostream>
 #include <fstream>
+#include <ctime>
 #include <windows.h>
 #include <iostream>
 #include <string>
 #include <vector>
 #include <conio.h>
 #include <cmath>
-#include <ctime>
+#include <Windows.h>
+
 
 using namespace std;
 
@@ -141,3 +143,5 @@ public:
 	void chooseFive();
 	void chooseSix();
 };
+
+

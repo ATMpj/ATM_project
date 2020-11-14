@@ -46,26 +46,29 @@ vector<Admin> ListAdmin::getListAdmin() {
 	return _arrAdmin;
 }
 
-
 //Class FeatureAdmin
 FeatureAdmin::FeatureAdmin() {
 	system("cls");
-
-	cout << "\n\n\n\n\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
-	cout << "\t\t\t*             DANG NHAP ADMIN               *" << endl;
-	cout << "\t\t\t* * * * * * * * * * * * * * * * * * * * * * *" << endl;
-	cout << endl;
-
 	_arrAdmin.readFile();
+
 }
 
 void FeatureAdmin::input() {
-	cout << "\t\t\t\tUser: ";
+	char c;
+	string pass;
+	cout << "\t\t\t\t@User:      ";
 	cin >> _strUser;
 	_admin.setUser(_strUser);
 
-	cout << "\t\t\t\tPIN: ";
-	cin >> _strPin;
+	cout << "\t\t\t\t@PIN:       ";
+	c = _getch();
+	while (c != 13)
+	{
+		pass.push_back(c);
+		cout << "*";
+		c = _getch();
+	}
+	_strPin = pass;
 	_admin.setPass(_strPin);
 }
 bool FeatureAdmin::checkLogin() {
@@ -73,8 +76,9 @@ bool FeatureAdmin::checkLogin() {
 }
 
 void FeatureAdmin::chooseOne() {
-	cout << "\t\t\t\t\tDanh Sach Tai Khoan\n\n\n" << endl;
+	int choose;
 
+	cout << "\n\n\t\t\t\t* * * * o(0)DANH SACH TAI KHOAN(0)o * * * *\n\n" << endl;
 	ListUser arrUser;
 	arrUser.readFile();
 	arrUser.viewListUser();
@@ -84,7 +88,7 @@ void FeatureAdmin::chooseTwo() {
 	ListInfoUser arrInfoUser;
 	arrUSer.readFile();
 		string newID, newName, newSurplus, newType;
-	cout << "\t\t\t\tNhap ID Muon Them: ";
+	cout << "\n\t\t\t\tNhap ID Muon Them: ";
 	cin >> newID;
 	cout << "\t\t\t\tNhap Ho va Ten: ";
 	cin >> newName;
@@ -120,7 +124,7 @@ void FeatureAdmin::chooseThree() {
 	ListUser arrUser;
 	arrUser.readFile();
 
-	cout << "\t\t\t\tNhap ID Muon Xoa: ";
+	cout << "\n\t\t\t\tNhap ID Muon Xoa: ";
 	string ID;
 	cin >> ID;
 
@@ -135,7 +139,7 @@ void FeatureAdmin::chooseFour() {
 	ListUser arrUser;
 	arrUser.readFile();
 
-	cout << "\t\t\t\tNhap ID Muon Mo Khoa:";
+	cout << "\n\t\t\t\tNhap ID Muon Mo Khoa:";
 	string ID;
 	cin >> ID;
 
