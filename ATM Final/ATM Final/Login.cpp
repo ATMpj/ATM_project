@@ -122,13 +122,13 @@ void Login::loginAdmin()
 
 				default:
 					system("cls");
-					cout << endl << "\t\t\tNHAP SAI ROI CON HANG!!!\n\t\t\tNHAP LAI DEE (>_<)";
+					cout << endl << "\t\t\tNHAP SAI ROI CON HANG!!!\tNHAP LAI DEE (>_<)";
 					break;
 				}
 			}
 		default:
 			system("cls");
-			cout << "\n\n\t\t\tDANG NHAP THAT BAI!!!\n\t\t\tTU KIEM TRA LAI DEEE \\(T_T)/\n";
+			cout << "\t\t\tDANG NHAP THAT BAI!!!\tTU KIEM TRA LAI DEEE \\(T_T)/";
 			break;
 		}
 	}
@@ -202,7 +202,7 @@ void Login::userLogin() {
 
 				default:
 					system("cls");
-					cout << endl << "\t\t\tNHAP SAI ROI CON HANG!!!\n\t\t\tNHAP LAI DEE (>_<)";
+					cout << endl << "\t\t\tNHAP SAI ROI CON HANG!!!\t\t\tNHAP LAI DEE (>_<)";
 					break;
 				}
 			}
@@ -210,7 +210,7 @@ void Login::userLogin() {
 		}
 		else {
 			system("cls");
-			cout << "\n\n\t\t\tDANG NHAP THAT BAI!!!\n\t\t\tVUI LONG NHAP LAI ID & PIN \\(T_T)/\n";
+			cout << "\t\t\tDANG NHAP THAT BAI!!!\tVUI LONG NHAP LAI ID & PIN \\(T_T)/";
 		}
 		feature.lockUser();
 	}
