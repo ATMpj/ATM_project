@@ -1,3 +1,3 @@
 ﻿  User.cpp
-D:\ATM_project\ATM Final\ATM Final\User.cpp(307): warning C4715: 'ListInfoUser::getInfoUser': not all control paths return a value
-  ATM Final.vcxproj -> D:\ATM_project\ATM Final\x64\Debug\ATM Final.exe
+C:\Users\minht\OneDrive\Máy tính\ATM_project-5b14c175644e2b40ea80484f4e83486a939cef3d\ATM Final\ATM Final\User.cpp(305): warning C4715: 'ListInfoUser::getInfoUser': not all control paths return a value
+  ATM Final.vcxproj -> C:\Users\minht\OneDrive\Máy tính\ATM_project-5b14c175644e2b40ea80484f4e83486a939cef3d\ATM Final\x64\Debug\ATM Final.exe

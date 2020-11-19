@@ -234,7 +234,7 @@ void ListInfoUser::takeMoney(string ID, string& s) {
 				cout << "\t\t\t\tMoi Ban Nhap So Tien Can Rut: ";
 				cin >> s;
 				cout << endl << endl;
-				cout << "\t\t\tHe thong dang chay, doi xiu nhe";
+				cout << "\t\tHe thong dang chay, doi xiu nhe";
 				Sleep(400);
 				cout << ".";
 				Sleep(400);
@@ -284,12 +284,10 @@ bool ListInfoUser::checkMoney(string ID, string s) {
 void ListInfoUser::viewInfoUser(string ID) {
 	for (int i = 0; i < _arrInfoUser.size(); i++) {
 		if (ID == _arrInfoUser[i].getID()) {
-			cout << "\t\t\t************************************************\n";
-			cout << "\t\t\t\t@  Id:            " << _arrInfoUser[i].getID() << endl;
-			cout << "\t\t\t\t@  Ten Tai Khoan: " << _arrInfoUser[i].getName() << endl;
-			cout << "\t\t\t\t@  So Du:         " << _arrInfoUser[i].getSurplus() << endl;
-			cout << "\t\t\t\t@  Loai Tien Te:  " << _arrInfoUser[i].getTypeCurrency() << endl;
-			cout << "\t\t\t************************************************\n" << endl << endl << endl;
+			cout << "\t\t\t\tId: " << _arrInfoUser[i].getID() << endl;
+			cout << "\t\t\t\tTen Tai Khoan: " << _arrInfoUser[i].getName() << endl;
+			cout << "\t\t\t\tSo Du: " << _arrInfoUser[i].getSurplus() << endl;
+			cout << "\t\t\t\tLoai Tien Te: " << _arrInfoUser[i].getTypeCurrency() << endl << endl << endl;
 			break;
 		}
 	}
@@ -338,7 +336,7 @@ void History::viewHistory() {
 	cout << "\t\t\t\tID: " << _strID << endl;
 	cout << "\t\t\t\tLoai Giao Dich: " << _strTypeTransfer << endl;
 	cout << "\t\t\t\tSo Tien Giao Dich: " << _strMoneyTransfer << endl;
-	cout << "\t\t\t\tThoi Gian: " << time << endl << endl;
+	cout << "\t\t\t\tThoi Gian: " << _strTime << endl << endl;
 }
 
 
@@ -477,7 +475,7 @@ void FeatureUser::lockUser() {
 }
 
 void FeatureUser::chooseOne() {
-	cout << endl << "\t\t\t\tTHONG TIN TAI KHOAN: \n " << endl;
+	cout << endl << "\t\t\t\tThong Tin Tai Khoan: " << endl;
 	ListInfoUser arrInfoUser;
 	arrInfoUser.readFile(_arrUser);
 	arrInfoUser.viewInfoUser(_strID);
@@ -499,7 +497,7 @@ void FeatureUser::chooseTwo() {
 	History history;
 	history.setID(a.getID());
 	history.setTime(h);
-	history.setTypeTransfer("\t\t\t\tRut Tien");
+	history.setTypeTransfer("Rut Tien");
 	arrInfoUser.takeMoney(_strID, s);
 	history.setMoneyTransfer(s);
 
@@ -519,7 +517,7 @@ void FeatureUser::chooseThree() {
 			cout << "\t\t\t\tNhap So Tien Can Chuyen: ";
 			string money;
 			cin >> money;
-			cout << "\t\t\tHe thong dang chay, doi xiu nhe";
+			cout << "He thong dang chay, doi xiu nhe";
 			Sleep(400);
 			cout << ".";
 			Sleep(400);
@@ -543,7 +541,7 @@ void FeatureUser::chooseThree() {
 				_arrHistory.readFile(_arrUser);
 				history.setTime(timeTransfer);
 				history.setID(_strID);
-				history.setTypeTransfer(" Da chuyen tien cho: " + arrInfoUser.getInfoUser(IDNeedTransfer).getName() + " voi ID chuyen den la: " + IDNeedTransfer);
+				history.setTypeTransfer("chuyen tien cho: " + arrInfoUser.getInfoUser(IDNeedTransfer).getName() + " voi ID chuyen den la: " + IDNeedTransfer);
 				history.setMoneyTransfer(money);
 				_arrHistory.add(history);
 				_arrHistory.writeFile2(_strID, IDNeedTransfer);
@@ -578,7 +576,7 @@ void FeatureUser::chooseFive() {
 				cin >> newPIN;
 				cout << "\t\t\t\tXac Nhan Ma PIN Moi: ";
 				cin >> newPIN2;
-				cout << "\t\t\tHe thong dang chay, doi xiu nhe";
+				cout << "He thong dang chay, doi xiu nhe";
 				Sleep(400);
 				cout << ".";
 				Sleep(400);
